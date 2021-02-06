@@ -1,0 +1,3 @@
+const GET_TODOS = "GET_TODOS";
+const  ADD_TODO = "ADD_ TODO"
+const  DELETE_TODO = "DELETE_TODO"
