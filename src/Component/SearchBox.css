@@ -1,0 +1,25 @@
+form {
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+input {
+  width: 400px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  /* color: #ccc; */
+  font-size: 18px;
+  text-align: center;
+}
+button {
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 10px;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+}

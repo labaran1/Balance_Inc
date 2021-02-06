@@ -6,7 +6,6 @@ export default function Home() {
         <center>
             <div className="searchContainer">
                 <h1>Todo  App</h1>
-
                 <SearchBox/>
             
             </div>
