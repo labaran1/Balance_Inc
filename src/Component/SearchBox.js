@@ -4,15 +4,21 @@ import './SearchBox.css'
 
 export default function SearchBox() {
     const [searchtext, setSearchtext] = useState("")
+    const [placeHolder, setPlaceHolder] = useState('add new todo')
 const appContext = useContext(AppContext)
     const sub=(e)=>{
         e.preventDefault()
 
-appContext.addTodo(searchtext)
+        if(searchtext !=="" || null || undefined){
+            appContext.addTodo(searchtext)
+
+        }
+       
+        setPlaceHolder("Add a todo")
     }
     return (
         <form onSubmit={sub}>
-            <input type="text" name="search" id="name" placeholder="add new todo" value={searchtext} onChange={(e)=>{
+            <input type="text" name="search" id="name" placeholder={placeHolder} value={searchtext} onChange={(e)=>{
 setSearchtext(e.target.value)
             }}/>
             <button type="submit"><i class="fas fa-plus "></i>
