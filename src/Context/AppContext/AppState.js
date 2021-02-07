@@ -12,13 +12,26 @@ const initialState = {
 
 const [state, dispatch] = useReducer(appReducer, initialState)
 
+const addTodo = (value)=> {
+    //Add to api 
 
+    dispatch({
+        type:ADD_TODO,
+        payload:{
+            value,
+        }
+    })
+
+
+
+}
 
 
 return(
     <AppContext.Provider
     value={{
         todos:state.todos,
+        addTodo,
     }}
     >
 
