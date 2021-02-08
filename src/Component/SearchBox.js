@@ -10,11 +10,26 @@ const appContext = useContext(AppContext)
         e.preventDefault()
 
         if(searchtext !=="" || null || undefined){
+
+
+           if(appContext.todos.includes(searchtext)){
+            //    alert("hello")
+           
+    setPlaceHolder("Add a todo")
+
+
+       
+           
+           }else{
             appContext.addTodo(searchtext)
 
+           }
+
         }
+ 
        
         setPlaceHolder("Add a todo")
+        setSearchtext("")
     }
     return (
         <form onSubmit={sub}>

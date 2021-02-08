@@ -13,7 +13,7 @@ switch (action.type) {
 //     case DELETE_TODO:{
 //         return {
 // ...state,
-// todos:[...state.todos].splice(action.payload.val,1)
+// todos:[... state.todos.filter(todo =>state.todos.indexOf(todo) !== action.payload.val)]
 //         }
 //     }
    

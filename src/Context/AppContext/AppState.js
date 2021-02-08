@@ -7,13 +7,17 @@ import  {GET_TODOS, ADD_TODO, DELETE_TODO} from '../types'
 
 const AppState = props => {
 const initialState = {
-    todos:["love", "hate"]
+    todos:[]
 }
 
 const [state, dispatch] = useReducer(appReducer, initialState)
 
 const addTodo = (value)=> {
-    //Add to api 
+    axios
+    .post('https://jsonplaceholder.typicode.com/todos', {
+      title:value,
+      completed: false
+    })
 
     dispatch({
         type:ADD_TODO,
@@ -29,18 +33,28 @@ useEffect(() => {
    rest.then(me => {
       me.data.forEach(dat => {
           addTodo(dat.title)
+    //      dispatch({
+    //     type:ADD_TODO,
+    //     payload:{
+    //         value:dat.title,
+    //     }
+    // })
       })
    })
 }, [])
 
 const remove = (val) => {
-console.log(val);
-    // dispatch({
-    //     type:DELETE_TODO,
-    //     payload:{
-    //         val,
-    //     }
-    // })
+    // TODO:COMPLETE THE FUNCTION
+//     axios.delete(`https://jsonplaceholder.typicode.com/todos/${val}`)
+//     .then(res => {
+//    dispatch({
+//         type:DELETE_TODO,
+//         payload:{
+//             val,
+//         }
+//     })
+//     })
+ 
 }
 
 return(
