@@ -2,3 +2,27 @@
   /* background: #000; */
   margin-top: 15rem;
 }
+
+.tcard {
+  width: 480px;
+  height: 65px;
+  background: #fff;
+  margin: 15px;
+  list-style-type: none;
+  text-align: left;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  /* border-radius: */
+  /* margin-top: 50px; */
+}
+
+.tcard span {
+  font-size: 17px;
+  background: red;
+  height: 25px;
+  width: 35px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+}
