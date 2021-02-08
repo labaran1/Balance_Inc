@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react'
+import React, {useReducer,useEffect} from 'react'
 import axios from 'axios';
 import AppContext from './appContext'
 import appReducer from './appReducer'
@@ -21,17 +21,34 @@ const addTodo = (value)=> {
             value,
         }
     })
-
-
-
 }
 
+
+useEffect(() => {
+   let rest = axios.get("https://jsonplaceholder.typicode.com/users/1/todos")
+   rest.then(me => {
+      me.data.forEach(dat => {
+          addTodo(dat.title)
+      })
+   })
+}, [])
+
+const remove = (val) => {
+console.log(val);
+    // dispatch({
+    //     type:DELETE_TODO,
+    //     payload:{
+    //         val,
+    //     }
+    // })
+}
 
 return(
     <AppContext.Provider
     value={{
         todos:state.todos,
         addTodo,
+        remove,
     }}
     >
 
